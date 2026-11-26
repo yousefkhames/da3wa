@@ -13,6 +13,15 @@ Weddings, iftar gatherings and graduations. Arabic and English, right-to-left do
 <img src="docs/guest-graduation.png" width="230" alt="English graduation invitation">
 </p>
 
+## Screenshots
+
+Captured from the live site (https://yousefkhames.github.io/da3wa/).
+
+<p>
+  <img src="docs/screenshots/live-desktop.png" alt="da3wa desktop view" width="640">
+  <img src="docs/screenshots/live-mobile.png" alt="da3wa mobile view" width="200">
+</p>
+
 ## Pitch
 
 Most people still send invitations as a screenshot and then chase replies in WhatsApp. Da3wa gives the host one link. The guest opens a proper invitation page (date, venue, map, countdown, add to calendar), taps one of three buttons, and a ready-written reply lands in the host's WhatsApp.
