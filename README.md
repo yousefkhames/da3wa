@@ -26,6 +26,7 @@ Most people still send invitations as a screenshot and then chase replies in Wha
 - **WhatsApp RSVP**: guests choose coming / not sure / cannot come, set party size (with your cap) and add a note. It opens WhatsApp to your number with the message prefilled. Egyptian numbers (`01012345678`) and international formats both work.
 - **Personalized links**: add guests to a list and get a link that greets each one by name, plus a one-tap "send invite" to their WhatsApp.
 - **Guest list tracker**: set each guest's status and head count, see totals, export CSV (formula-injection safe).
+- **Installable and offline**: a service worker and web app manifest (with icons) let you add it to the home screen and open it without a connection.
 - **Countdown**, **map link**, **add to calendar** (.ics download) and **print**.
 - Several invitations at once under "My invitations".
 - Mobile first, keyboard friendly, respects reduced motion.
@@ -64,8 +65,11 @@ node tests/e2e.mjs http://localhost:8000/   # 27 checks in headless Chrome
 
 The click-through covers validation, live preview, saving, persistence, guest list, WhatsApp links, the guest page, XSS payloads, a broken link, RTL/LTR switching and mobile overflow. The same script was run against the live GitHub Pages URL before release.
 
+`node tests/offline.mjs <url>` checks that the service worker installs, the manifest and icons load, and the app still renders with the network switched off.
+
 ## Honest limits
 
+- Offline support caches the app files after the first visit. Opening an invitation link for the first time still needs the app to have been loaded once online. WhatsApp links and maps need a connection, of course.
 - GitHub Pages is a demo host. It is fine for trying the app, not a guarantee of uptime for a real wedding.
 - There is no server, so **replies are not collected in the app**. They arrive in the host's WhatsApp, and the host updates each guest's status by hand in the guest list.
 - Your saved invitations and guest list live in **this browser only**. Clearing site data or switching device loses them. The shareable link itself keeps working because it carries the invitation.
