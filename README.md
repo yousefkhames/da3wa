@@ -1,3 +1,21 @@
+<div align="center">
+
+<img src="assets/yk-logo.svg" width="64" alt="YK">
+
+# da3wa
+
+**da3wa** · demo / portfolio project
+
+**مولّد صفحات دعوة** · مشروع تجريبي للعرض
+
+[Live demo](https://yousefkhames.github.io/da3wa/) · By Yousef Khames · من تطوير يوسف خميس
+
+<img src="assets/og.png" width="640" alt="da3wa preview">
+
+</div>
+
+---
+
 # da3wa · دعوة
 
 A white-label invitation page generator for weddings, engagements, birthdays, graduations, aqiqa and general events. The host fills a form and gets a shareable link, a QR code and a single downloadable HTML file. Arabic RTL and English LTR. Static HTML, CSS and JavaScript. No build, account, server or API.
