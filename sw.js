@@ -1,18 +1,17 @@
-/* Offline cache. Bump VERSION when files change. */
-const VERSION = 'da3wa-v1';
-const FILES = ['./', 'index.html', 'css/style.css', 'js/core.js', 'js/templates.js', 'js/i18n.js', 'js/app.js', 'logo.svg', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png'];
-self.addEventListener('install', (e) => {
-  e.waitUntil(caches.open(VERSION).then((c) => c.addAll(FILES)).then(() => self.skipWaiting()));
-});
-self.addEventListener('activate', (e) => {
-  e.waitUntil(caches.keys().then((ks) => Promise.all(ks.filter((k) => k !== VERSION).map((k) => caches.delete(k)))).then(() => self.clients.claim()));
-});
+const CACHE = 'da3wa-v1';
+const FILES = ['./','index.html','manifest.webmanifest','base.css','kit-base.js','fonts/fonts.css','fonts/Cairo-arabic.woff2','fonts/Cairo-latin.woff2','assets/kit-theme.js','assets/qrcode.js','assets/yk-logo.svg','assets/favicon.svg','config.js','core.js','i18n.js','app.js','styles.css'];
+self.addEventListener('install', (e) => { e.waitUntil(caches.open(CACHE).then((c) => c.addAll(FILES)).then(() => self.skipWaiting())); });
+self.addEventListener('activate', (e) => { e.waitUntil(caches.keys().then((ks) => Promise.all(ks.filter((k) => /^da3wa-v\d+$/.test(k) && k !== CACHE).map((k) => caches.delete(k)))).then(() => self.clients.claim())); });
 self.addEventListener('fetch', (e) => {
   if (e.request.method !== 'GET' || new URL(e.request.url).origin !== location.origin) return;
-  e.respondWith(
-    fetch(e.request).then((r) => {
-      if (r.ok) { const copy = r.clone(); caches.open(VERSION).then((c) => c.put(e.request, copy)); }
-      return r;
-    }).catch(() => caches.match(e.request, { ignoreSearch: true }).then((m) => m || caches.match('index.html')))
-  );
+  const url = new URL(e.request.url);
+  if (!FILES.some((file) => new URL(file, self.registration.scope).pathname === url.pathname)) return;
+  const request = new Request(url.origin + url.pathname);
+  e.respondWith((async () => {
+    try {
+      const response = await fetch(e.request);
+      if (response.ok) { try { await (await caches.open(CACHE)).put(request, response.clone()); } catch { /* cache unavailable */ } return response; }
+      return response.status >= 500 ? (await (await caches.open(CACHE)).match(request)) || response : response;
+    } catch { return (await (await caches.open(CACHE)).match(request)) || new Response('Offline', { status: 503 }); }
+  })());
 });

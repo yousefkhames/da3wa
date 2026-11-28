@@ -1,18 +1,1 @@
-{
-  "name": "Da3wa | دعوة",
-  "short_name": "Da3wa",
-  "description": "Invitation page generator for weddings, iftar and graduations. Arabic and English, works offline.",
-  "start_url": "./",
-  "scope": "./",
-  "display": "standalone",
-  "background_color": "#f3ead9",
-  "theme_color": "#f3ead9",
-  "lang": "ar",
-  "dir": "rtl",
-  "icons": [
-    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
-    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
-    { "src": "logo.svg", "sizes": "any", "type": "image/svg+xml" }
-  ]
-}
+{"name":"da3wa","short_name":"da3wa","start_url":"./","scope":"./","display":"standalone","background_color":"#F8FAFC","theme_color":"#F8FAFC","icons":[{"src":"assets/favicon.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}]}

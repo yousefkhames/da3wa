@@ -1,0 +1,20 @@
+/* MIT · Copyright (c) 2026 Yousef Khames · UI strings as [Arabic, English]. */
+(function (root) {
+  'use strict';
+  Object.assign(root.Kit.dict, {
+    title: ['دعوة', 'da3wa'], lang: ['EN', 'عربي'], demoBanner: ['نموذج تجريبي بأسماء خيالية. امسحه وابدأ دعوتك.', 'Demo example with fictional names. Clear it and start your own.'], clear: ['ابدأ دعوة جديدة فارغة', 'Start a blank invitation'], confirmClear: ['سيتم مسح النموذج الحالي. متابعة؟', 'This clears the current form. Continue?'],
+    h1: ['صانع الدعوات', 'Invitation maker'], intro: ['املأ البيانات، وستظهر المعاينة فورًا. الدعوة كلها داخل الرابط ولا تُحفظ على أي سيرفر.', 'Fill in the details and the preview updates. The whole invitation lives inside the link and is not stored on any server.'],
+    fType: ['نوع المناسبة', 'Event type'], fLang: ['لغة الدعوة', 'Invitation language'], fH1: ['الاسم الأول', 'First host name'], fH2: ['الاسم الثاني (اختياري)', 'Second host name (optional)'], fDate: ['التاريخ', 'Date'], fTime: ['الوقت', 'Time'], fEnd: ['وقت الانتهاء (اختياري)', 'End time (optional)'],
+    fVenue: ['اسم المكان', 'Venue name'], fAddr: ['العنوان', 'Address'], fMaps: ['رابط خرائط جوجل (اختياري)', 'Google Maps link (optional)'], fDress: ['الزي (اختياري)', 'Dress code (optional)'], fMsg: ['رسالة (اختياري)', 'Message (optional)'], fWa: ['رقم واتساب لتأكيد الحضور (اختياري)', 'WhatsApp number for RSVP (optional)'], fTheme: ['التصميم', 'Theme'],
+    ty_wedding: ['زفاف', 'Wedding'], ty_engagement: ['خطوبة', 'Engagement'], ty_birthday: ['عيد ميلاد', 'Birthday'], ty_graduation: ['تخرج', 'Graduation'], ty_aqiqa: ['عقيقة', 'Aqiqa'], ty_generic: ['مناسبة عامة', 'Generic event'], langAr: ['عربي', 'Arabic'], langEn: ['إنجليزي', 'English'],
+    preview: ['المعاينة', 'Preview'], share: ['المشاركة', 'Share'], e_hosts: ['اكتب اسمًا واحدًا على الأقل', 'Enter at least one host name'], e_date: ['اختر تاريخًا ووقتًا صحيحين', 'Pick a valid date and time'], badMaps: ['رابط الخرائط غير مقبول وسيتم تجاهله. استخدم رابط جوجل ماب.', 'The maps link is not accepted and will be ignored. Use a Google Maps link.'], badWa: ['رقم واتساب غير صالح وسيتم تجاهله', 'The WhatsApp number is not valid and will be ignored'],
+    linkLabel: ['رابط الدعوة', 'Invitation link'], copyLink: ['نسخ الرابط', 'Copy link'], copied: ['تم النسخ', 'Copied'], longLink: ['الرابط طويل ({n} حرف) وقد لا يعمل في بعض التطبيقات. قصّر الرسالة أو العنوان.', 'The link is long ({n} characters) and may fail in some apps. Shorten the message or address.'], noQr: ['الرابط أطول من أن يتحول إلى QR. قصّر النص.', 'The link is too long for a QR code. Shorten the text.'],
+    localLink: ['أنت تعمل من نسخة محلية: الرابط لن يعمل لدى الضيوف. انشر الصفحة أولًا ثم أنشئ الروابط منها.', 'You are on a local copy: this link will not work for guests. Publish the page first, then make links from it.'],
+    dlHtml: ['تنزيل ملف HTML واحد', 'Download single HTML file'], dlIcs: ['تنزيل ملف التقويم', 'Download calendar file'], printCard: ['طباعة الدعوة', 'Print card'],
+    guestsH: ['روابط شخصية للضيوف', 'Personal links for guests'], guestsHelp: ['اكتب اسم ضيف في كل سطر. كل ضيف يحصل على رابط باسمه، ويظهر اسمه في الرد على واتساب.', 'One guest name per line. Each guest gets a link with their name, prefilled in the WhatsApp reply.'], guestsPh: ['اسم ضيف في كل سطر', 'One guest name per line'],
+    wa: ['مسودة واتساب', 'WhatsApp draft'], waGuest: ['أهلًا {g}، يسعدنا دعوتك: {url}', 'Hi {g}, we would love to invite you: {url}'],
+    limits: ['حدود: لا يوجد عد للردود (ردود واتساب تصلك يدويًا). العد التنازلي يعتمد على ساعة جهاز الضيف. الوقت في الدعوة بدون منطقة زمنية. الدعوة المنزلة كملف HTML تستخدم خطوط الجهاز.', 'Limits: no RSVP counting (WhatsApp replies reach you manually). The countdown uses the guest device clock. The invitation time has no timezone. The downloaded HTML file uses the device fonts.'],
+    /* viewer */
+    badLink: ['رابط الدعوة غير صالح.', 'This invitation link is not valid.'], openMaker: ['فتح صانع الدعوات', 'Open the invitation maker']
+  });
+})(globalThis);

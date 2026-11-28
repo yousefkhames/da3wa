@@ -3,24 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>دعوة | Da3wa</title>
-<meta name="description" content="Invitation page generator for weddings, iftar and graduations. Arabic and English, free, no server.">
-<meta name="theme-color" content="#f3ead9">
-<link rel="icon" href="logo.svg" type="image/svg+xml">
+<title>da3wa | دعوة</title>
+<meta name="description" content="da3wa: white-label invitation page generator. Fill a form, get a shareable invitation link, QR and a single HTML file. Static, no server.">
+<meta name="theme-color" content="#F8FAFC">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="apple-touch-icon" href="icon-192.png">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="top" id="top"></header>
-<main id="app" tabindex="-1"><noscript>Da3wa needs JavaScript. دعوة تحتاج جافاسكربت.</noscript></main>
-<footer class="foot" id="foot"></footer>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script type="module" src="js/app.js"></script>
-<script>
-if ('serviceWorker' in navigator && /^https:|^http:\/\/localhost/.test(location.protocol + '//' + location.host)) {
-  window.addEventListener('load', function () { navigator.serviceWorker.register('sw.js').catch(function () {}); });
-}
-</script>
+<a class="skip" href="#main-content">انتقل للمحتوى / Skip to content</a>
+<div id="app"></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<noscript>da3wa needs JavaScript. / يحتاج جافاسكريبت.</noscript>
+<script defer src="assets/kit-theme.js"></script>
+<script defer src="assets/qrcode.js"></script>
+<script defer src="kit-base.js"></script>
+<script defer src="config.js"></script>
+<script defer src="core.js"></script>
+<script defer src="i18n.js"></script>
+<script defer src="app.js"></script>
 </body>
 </html>
